@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    label {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <div id="container" style="height: 400px; width: 100%; margin: 0 auto"></div>
+  <script>
+    Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Zmínky Hitlera a Stalina na jednáních Poslanecké sněmovny'
+    },
+    credits: {
+        text: 'Zdroj: Stenoprotokoly PSP',
+    },
+    xAxis: {
+        categories: [1993, 1996, 1998, 2002, 2006, 2010, 2013, 2017],
+        title: {
+            text: "Počátek sněmovního období"
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Počet zmínek',
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        shared: true
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    series: [{
+        name: 'Hitler',
+        data: [30, 149, 25, 38, 25, 14, 66, 8]
+    },{
+        name: 'Stalin',
+        data: [23, 17, 15, 55, 25, 12, 35, 17]
+    }]
+});
+  </script>
+</body>
+
+</html>
